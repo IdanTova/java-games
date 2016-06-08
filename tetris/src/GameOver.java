@@ -64,14 +64,16 @@ public class GameOver extends AbstractGamePanel {
   }
 
   public void paint(Graphics2D g) {
-    Image back = Toolkit.getDefaultToolkit().getImage("D:\\Java Projects\\Tetris\\src\\back.jpg");
+    Image back = Toolkit.getDefaultToolkit().getImage(getClass().getResource("back.jpg"));
     g.drawImage(back, 0, 0, 351, 871, null);
     g.setColor(Color.GREEN.darker());
     g.setFont(new Font("", Font.BOLD, 75));
     g.drawString("GAME", 55, 80);
     g.drawString("OVER", 62,145);
     for (GameButton button : buttons) {
-      button.paint(g);
+      if(button != null) {
+        button.paint(g);
+      }
     }
   }
 }
