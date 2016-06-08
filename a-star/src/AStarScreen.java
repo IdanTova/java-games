@@ -261,9 +261,9 @@ public class AStarScreen extends AbstractGamePanel implements org.age.path.AStar
         }
       }
 
-      if (path1 != null) {
-        man.chooseDirection(path1);
-      }
+//      if (path1 != null) {
+//        man.chooseDirection(path1);
+//      }
       man.updateRects();
       if (timeCounter == 1) {
         timeCounter = 0;
