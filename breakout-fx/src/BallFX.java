@@ -92,7 +92,7 @@ public class BallFX {
     if(!anim.isAnimating() && shouldDrawTrail) {
       paintTrail(BreakoutRunFX.lowerCanvas.getGraphicsContext2D());
     }
-    if(doSpawnAnimation && BreakoutScreenFX.shouldRun && shouldAnimate) {
+    if(doSpawnAnimation && BreakoutScreenFX.shouldRun && shouldAnimate && !BreakoutScreenFX.gamePaused) {
       anim.animate(g);
     } else if(doSpawnAnimation && BreakoutScreenFX.shouldRun) {
       // keep this here ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
@@ -100,7 +100,7 @@ public class BallFX {
       anim.setAnimating(false);
     }
     g.setFill(new Color(0/255.0f, 156/255.0f, 209/255.0f, 1.0f));
-    if(ballState == BallStates.POWER_BALL || ballState == BallStates.DRUNK_POWER_BALL) {
+    if((ballState == BallStates.POWER_BALL || ballState == BallStates.DRUNK_POWER_BALL)  && !BreakoutScreenFX.gamePaused) {
       colorAnim1.animate(g);
     }
     g.fillArc(bounds.getX() + x, bounds.getY() + currentY + y, bounds.getWidth(), bounds.getHeight(), 0, 360, ArcType.CHORD);
@@ -111,7 +111,9 @@ public class BallFX {
   }
 
   private void paintTrail(GraphicsContext g) {
-    colorAnim2.animate(g);
+    if(!BreakoutScreenFX.gamePaused) {
+      colorAnim2.animate(g);
+    }
     float thickness = 2 * radius - 1;
     float finalThickness = 0;
     float alpha = 0.55f;
@@ -360,7 +362,7 @@ public class BallFX {
   }
 
   public void animateOut() {
-    if(physics.getCounter() > 35) {
+    if(physics.getCounter() > 35  && !BreakoutScreenFX.gamePaused) {
       physics.animate();
       shouldDrawTrail = false;
     }
