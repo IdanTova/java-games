@@ -36,10 +36,10 @@ public class PowerUp {
     point = new Point2D.Double(box.getPoint().getX() + 1.25*25, box.getPoint().getY() + 0.15*25);
     bounds = new RoundRectangle2D.Double(point.getX(), point.getY(), 25.0 * 3/2, 25.0*0.7, 10, 10);
 
-//    int random = (int)(Math.random() * PowerUp.PowerUps.values().length);
-//    power = PowerUp.PowerUps.values()[random];
+    int random = (int)(Math.random() * PowerUp.PowerUps.values().length);
+    power = PowerUp.PowerUps.values()[random];
 
-    power = PowerUps.SPLIT_BALLS;
+//    power = PowerUps.SPLIT_BALLS;
 
 //    if(random > PowerUps.values().length/2) {
 //      power = PowerUps.GUN_PADDLE;
@@ -52,7 +52,7 @@ public class PowerUp {
   }
 
   public void draw(Graphics2D g) {
-    Image lel = Toolkit.getDefaultToolkit().getImage("D:\\JavaProjects\\Game\\breakout\\src\\assets\\powerUpIcons\\" + power.name() +".png");
+    Image lel = Toolkit.getDefaultToolkit().getImage(getClass().getResource("assets\\powerUpIcons\\" + power.name() +".png"));
     anim.animate(g);
     g.setClip(bounds);
     g.drawImage(lel, (int)(point.getX()), (int)(point.getY()), null);

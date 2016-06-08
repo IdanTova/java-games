@@ -22,7 +22,6 @@ public class MathProblem {
   }
 
   public Image getImage() {
-    Image img = loadImage("math\\prob" + problemNum + ".png");
-    return img;
+    return loadImage("/fiveweek/images/math/prob" + problemNum + ".png");
   }
 }

@@ -1,6 +1,8 @@
-import java.awt.*;
-import java.util.*;
-import java.util.List;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
 
 /**
  * Created by PetruscaFamily on 6/18/2015.
@@ -23,15 +25,15 @@ public class Ghost extends PacCharacter {
 
     Toolkit kit = Toolkit.getDefaultToolkit();
     if(color.equals(Color.GREEN)) {
-      right = kit.getImage("D:\\Java Projects\\Game\\a-star\\src\\green_right.png");
-      left = kit.getImage("D:\\Java Projects\\Game\\a-star\\src\\green_left.png");
-      up = kit.getImage("D:\\Java Projects\\Game\\a-star\\src\\green_up.png");
-      down = kit.getImage("D:\\Java Projects\\Game\\a-star\\src\\green_down.png");
+      right = kit.getImage(getClass().getResource("green_right.png"));
+      left = kit.getImage(getClass().getResource("green_left.png"));
+      up = kit.getImage(getClass().getResource("green_up.png"));
+      down = kit.getImage(getClass().getResource("green_down.png"));
     } else if (color.equals(Color.MAGENTA)) {
-      right = kit.getImage("D:\\Java Projects\\Game\\a-star\\src\\red_right.png");
-      left = kit.getImage("D:\\Java Projects\\Game\\a-star\\src\\red_left.png");
-      up = kit.getImage("D:\\Java Projects\\Game\\a-star\\src\\red_up.png");
-      down = kit.getImage("D:\\Java Projects\\Game\\a-star\\src\\red_down.png");
+      right = kit.getImage(getClass().getResource("red_right.png"));
+      left = kit.getImage(getClass().getResource("red_left.png"));
+      up = kit.getImage(getClass().getResource("red_up.png"));
+      down = kit.getImage(getClass().getResource("red_down.png"));
     }
     selected = left;
     direction = 2;

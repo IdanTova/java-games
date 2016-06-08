@@ -21,10 +21,10 @@ public class PaddleFX {
   private Point2D point;
   private Rectangle2D bounds;
   private int lengthFactor;
-  private boolean isMagnetic = false;
-  private boolean isGun = true;
+  private boolean isMagnetic;
+  private boolean isGun;
   private int magnetCounter = -1;
-  private int bulletCounter = 10;
+  private int bulletCounter = 0;
   private RainbowAnimator2FX anim;
   private List<FireFlyFX> fires;
 
@@ -118,8 +118,13 @@ public class PaddleFX {
     g.setStroke(Color.WHITE);
     g.strokeArc(bounds.getCenterX() - 9, bounds.getCenterY() - 9 + currentY, 19, 19, 0, 360, ArcType.CHORD);
     g.setFill(Color.WHITE);
-    g.setFont(Font.loadFont(getClass().getResource("fonts/AndroidInsomnia.ttf").toExternalForm(), 16));
-    g.fillText("" + bulletCounter, bounds.getCenterX() - 4.5, bounds.getCenterY() + 5 + currentY, 15);
+    if(bulletCounter < 10) {
+      g.setFont(Font.loadFont(getClass().getResource("fonts/AndroidInsomnia.ttf").toExternalForm(), 16));
+      g.fillText("" + bulletCounter, bounds.getCenterX() - 4, bounds.getCenterY() + 5 + currentY, 15);
+    } else {
+      g.setFont(Font.loadFont(getClass().getResource("fonts/AndroidInsomnia.ttf").toExternalForm(), 15));
+      g.fillText("" + bulletCounter, bounds.getCenterX() - 6.5, bounds.getCenterY() + 5 + currentY, 15);
+    }
   }
 
   private void animateBullets() {

@@ -140,7 +140,6 @@ public class PongRun extends JPanel implements KeyListener {
   @Override
   public void keyPressed(KeyEvent e) {
     keys[e.getKeyCode()] = true;
-    System.out.println(e.getKeyCode());
   }
 
   @Override

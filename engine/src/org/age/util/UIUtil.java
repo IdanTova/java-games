@@ -1,11 +1,14 @@
 package org.age.util;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
+import java.awt.AlphaComposite;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -44,8 +47,7 @@ public class UIUtil {
 
   public static BufferedImage loadImage(String relativePath) {
     try {
-      URL resource = UIUtil.class.getResource(relativePath);
-      return ImageIO.read(resource);
+      return ImageIO.read(UIUtil.class.getResource(relativePath));
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
