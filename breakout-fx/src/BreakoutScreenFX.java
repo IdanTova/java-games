@@ -76,6 +76,7 @@ public class BreakoutScreenFX extends StackPane {
   private boolean isIntroducingBoxes;
   private boolean isCleaningBoard; // fixme implement a cleanup system
   private boolean cleaningIsDone;
+  public static boolean gamePaused;
 
   public BreakoutScreenFX(BreakoutRunFX runFX) {
     this.runFX = runFX;
@@ -142,30 +143,36 @@ public class BreakoutScreenFX extends StackPane {
         }
       }
       if (runFX.state == BreakoutRunFX.BreakoutState.GAME) {
-        if (shouldRun) {
+        if (shouldRun && !gamePaused) {
           animateGame(t);
         }
         paintGame(runFX.getUpperG());
         runFX.lastState = BreakoutRunFX.BreakoutState.GAME;
       } else if (runFX.state == BreakoutRunFX.BreakoutState.MENU) {
-        menuFX.animate(t);
+        if(!gamePaused) {
+          menuFX.animate(t);
+        }
         menuFX.paint(runFX.getUpperG());
         runFX.lastState = BreakoutRunFX.BreakoutState.MENU;
       } else if (runFX.state == BreakoutRunFX.BreakoutState.CONTINUE) {
-        continueFX.animate(t);
+        if(!gamePaused) {
+          continueFX.animate(t);
+        }
         continueFX.paint(runFX.getUpperG());
         runFX.lastState = BreakoutRunFX.BreakoutState.CONTINUE;
       } else if (runFX.state == BreakoutRunFX.BreakoutState.INTRO) {
-        introFX.animate(t);
+        if(!gamePaused) {
+          introFX.animate(t);
+        }
         introFX.paint(runFX.getUpperG());
         runFX.lastState = BreakoutRunFX.BreakoutState.INTRO;
       }
       changedState = runFX.state != runFX.lastState;
 
-      if (changedState || (!shouldRun && runFX.state == BreakoutRunFX.BreakoutState.GAME)) {
+      if ((changedState || (!shouldRun && runFX.state == BreakoutRunFX.BreakoutState.GAME)) && !gamePaused) {
         try {
           Robot robot = new Robot();
-          robot.mouseMove(642 + 310, 407);
+          robot.mouseMove((int) (runFX.getStage().getX() + runFX.getStage().getWidth()/2), 407);
         } catch (AWTException e) {
           System.exit(-1);
         }
@@ -237,10 +244,16 @@ public class BreakoutScreenFX extends StackPane {
     setDefaultEffects();
     runFX.getScene().setOnKeyPressed(event -> {
       if (event.getCode().equals(KeyCode.ESCAPE)) {
-        runFX.getStage().close();
+        if(runFX.state == BreakoutRunFX.BreakoutState.GAME) {
+          pauseGame();
+        } else {
+          runFX.getStage().close();
+        }
       }
       if (event.getCode().equals(KeyCode.WINDOWS)) {
-
+        if(runFX.state == BreakoutRunFX.BreakoutState.GAME) {
+          pauseGame();
+        }
       }
       if (event.getCode().equals(KeyCode.RIGHT)) {
         if(!MenuScreenFX.oneSelected) {
@@ -267,25 +280,27 @@ public class BreakoutScreenFX extends StackPane {
           }
         }
         if (paddle.isGun()) {
-          paddle.shootGun();
+          if(!gamePaused) {
+            paddle.shootGun();
+          }
         }
       }
     });
 
     runFX.getScene().setOnMouseDragged(event -> {
       mousePosition = new Point2D.Double(event.getX(), event.getY());
-      double x = event.getX();
+      double x = event.getScreenX();
       requestFocus();
-      mouseDisplacement = x - 642;
+      mouseDisplacement = x - (int) (runFX.getStage().getX() + runFX.getStage().getWidth()/2);
       if (isConfused) {
         mouseDisplacement = -mouseDisplacement;
       }
     });
     runFX.getScene().setOnMouseMoved(event -> {
       mousePosition = new Point2D.Double(event.getX(), event.getY());
-      double x = event.getX();
+      double x = event.getScreenX();
       requestFocus();
-      mouseDisplacement = x - 642;
+      mouseDisplacement = x - (int) (runFX.getStage().getX() + runFX.getStage().getWidth()/2);
       if (isConfused) {
         mouseDisplacement = -mouseDisplacement;
       }
@@ -300,12 +315,27 @@ public class BreakoutScreenFX extends StackPane {
         }
       }
       if (paddle.isGun()) {
-        paddle.shootGun();
+        if(!gamePaused) {
+          paddle.shootGun();
+        }
       }
       if (runFX.lastState == BreakoutRunFX.BreakoutState.GAME) {
-        splitBalls(); //FIXME add testing behavior here
+        if(gamePaused) {
+//          splitBalls(); //FIXME add testing behavior here
+        }
+      }
+      if(gamePaused) {
+        unPauseGame();
       }
     });
+  }
+
+  private void pauseGame() {
+    gamePaused = true;
+  }
+
+  private void unPauseGame() {
+    gamePaused = false;
   }
 
   private void animateGame(double t) {
@@ -315,11 +345,13 @@ public class BreakoutScreenFX extends StackPane {
     }
     confusionCounter++;
     runFX.getScene().setCursor(Cursor.NONE);
-    try {
-      Robot robot = new Robot();
-      robot.mouseMove(642 + 310, 407);
-    } catch (AWTException e) {
-      System.exit(-1);
+    if(!gamePaused) {
+      try {
+        Robot robot = new Robot();
+        robot.mouseMove((int) (runFX.getStage().getX() + runFX.getStage().getWidth() / 2), 407);
+      } catch (AWTException e) {
+        System.exit(-1);
+      }
     }
 
     if (mouseDisplacement < 0) {
@@ -454,7 +486,9 @@ public class BreakoutScreenFX extends StackPane {
 
   private void drawBackgroundLights() {
     if (shouldRun) {
-      maybeAddDotLight();
+      if(!gamePaused) {
+        maybeAddDotLight();
+      }
       for (DotLightFX dotlight : dotlights) {
         dotlight.animate(runFX.getLowerG());
       }
@@ -487,10 +521,14 @@ public class BreakoutScreenFX extends StackPane {
       deadBoxes.get(i).draw(g);
     }
     for (int i = 0; i < shatters.size(); i++) {
-      shatters.get(i).animate(g);
+      if(!gamePaused) {
+        shatters.get(i).animate(g);
+      }
     }
     for (int i = 0; i < texts.size(); i++) {
-      texts.get(i).animate(g);
+      if(!gamePaused) {
+        texts.get(i).animate(g);
+      }
     }
   }
 
@@ -635,6 +673,13 @@ public class BreakoutScreenFX extends StackPane {
     int offset = (int) (runFX.width / 15.3);
     g.fillText("Level: " + level, offset - xTop, 63);
     g.fillText("Score: " + score, 2 * runFX.width / 3 + offset + xTop, 63);
+
+    if(gamePaused) {
+      g.setFont(Font.loadFont(getClass().getResource("fonts/AndroidInsomnia.ttf").toExternalForm(), 100));
+      g.setFill(Color.AQUAMARINE);
+      g.setGlobalAlpha(1);
+      g.fillText("Paused", runFX.width/2 - 178, runFX.height/2);
+    }
   }
 
   private void resetProcess(boolean screenShake) {
@@ -720,7 +765,9 @@ public class BreakoutScreenFX extends StackPane {
       }
     }
     for (int i = 0; i < powerUps.size(); i++) {
-      powerUps.get(i).animate();
+      if(!gamePaused) {
+        powerUps.get(i).animate();
+      }
       powerUps.get(i).draw(g);
     }
     paddle.draw(g);

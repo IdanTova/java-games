@@ -1,5 +1,6 @@
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.scene.CacheHint;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -44,6 +45,13 @@ public class BreakoutRunFX extends Application {
     upperCanvas = new Canvas(width, height);
     UICanvas = new Canvas(width, height);
     glassCanvas = new Canvas(width, height);
+
+    lowerCanvas.setCacheHint(CacheHint.SPEED);
+    upperCanvas.setCacheHint(CacheHint.SPEED);
+    UICanvas.setCacheHint(CacheHint.SPEED);
+    glassCanvas.setCacheHint(CacheHint.SPEED);
+    gameScreen.setCacheHint(CacheHint.SPEED);
+
     gameScreen.getChildren().add(lowerCanvas);
     gameScreen.getChildren().add(upperCanvas);
     gameScreen.getChildren().add(UICanvas);
