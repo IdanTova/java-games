@@ -48,7 +48,7 @@ public class BreakoutScreen extends AbstractGamePanel {
       System.exit(-1);
     }
     breakoutRun.addMouseMotionListener(breakoutRun);
-    loadBoxes("D:\\JavaProjects\\Game\\breakout\\src\\assets\\levels\\level" + level + ".png");
+    loadBoxes(BreakoutScreen.class.getResource("assets/levels/level" + level + ".png").getPath());
     addAnims();
     breakoutRun.addMouseListener(new MouseAdapter() {
       @Override
@@ -166,7 +166,7 @@ public class BreakoutScreen extends AbstractGamePanel {
       if(levelChangeCounter > 10) {
         level++;
         levelChangeCounter = 0;
-        loadBoxes("D:\\JavaProjects\\Game\\breakout\\src\\assets\\levels\\level" + level + ".png");
+        loadBoxes(BreakoutScreen.class.getResource("assets/levels/level" + level + ".png").getPath());
         balls.add(new Ball(breakoutRun.width/2, 3*breakoutRun.height/4, true)); //FIXME ------> make better
       }
     }
