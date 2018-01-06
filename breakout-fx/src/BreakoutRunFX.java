@@ -11,7 +11,7 @@ import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 
 public class BreakoutRunFX extends Application {
-  public static enum BreakoutState {
+  public enum BreakoutState {
     INTRO,
     GAME,
     MENU,
@@ -33,7 +33,8 @@ public class BreakoutRunFX extends Application {
   public static Canvas glassCanvas;
   BreakoutState state;
   BreakoutState lastState;
-  public void start(Stage theStage) throws URISyntaxException, FileNotFoundException {
+
+  public void start(Stage theStage) {
     theStage.setTitle("Breakout -- Alex Petrusca");
     state = BreakoutState.INTRO;
     lastState = BreakoutState.INTRO;
