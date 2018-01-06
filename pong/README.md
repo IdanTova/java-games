@@ -39,7 +39,3 @@ Pokemon (The first game I ever made for a class project. A pokemon clone game)
   Main class - PokemonMain.java
   Instructions:
     Use arrow keys to maneuver.
-
-
-
-
