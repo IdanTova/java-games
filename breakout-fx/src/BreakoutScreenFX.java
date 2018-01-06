@@ -987,7 +987,8 @@ public class BreakoutScreenFX extends StackPane {
         isDone = true;
       } else if (powerUp.getPower() == PowerUpFX.PowerUps.LIFE_UP) {
         endColor = Color.GREEN;
-        lives++;
+        if(lives <= 5)
+          lives++;
         isDone = true;
       } else if (powerUp.getPower() == PowerUpFX.PowerUps.GUN_PADDLE) {
         endColor = Color.GREEN;
