@@ -7,11 +7,15 @@ A Breakout game implemented using JavaFX
   * Space or mouse click to perform actions like shooting.
   * Escape to pause game.
 
-![Screen1](https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen1.PNG)
-![Screen2](https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen2.PNG)
-![Screen2](https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen3.PNG)
-![Screen2](https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen4.PNG)
-![Screen2](https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen5.PNG)
+[Screen1]: https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen1.PNG
+[Screen2]: https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen2.PNG
+[Screen3]: https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen3.PNG
+[Screen4]: https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen4.PNG
+[Screen5]: https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen5.PNG
+
+![Screen1]  |  ![Screen3]
+:----------:|:----------:
+![Screen4]  |  ![Screen5]
 
 # Tetris
 A Tetris game implemented using Swing
