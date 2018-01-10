@@ -7,7 +7,7 @@ A Breakout game implemented using JavaFX
   * Space or mouse click to perform actions like shooting.
   * Escape to pause game.
 
-![Screen1](https://github.com/AlexPetrusca/java-games/tree/master/screenshots/screen1.PNG)
+![Screen1](https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen1.PNG)
 
 # Tetris
 A Tetris game implemented using Swing
