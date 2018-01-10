@@ -41,11 +41,10 @@ A mostly complete Asteroids game implemented using Swing
   * Use up key to turn engine on and accelerate forward.
   * Use the "q" key to shoot bullets.
   
-![A1]  |  ![A2]
-:-----:|:-----:
+![A1]  |
+:-----:|
 
 [A1]: https://github.com/AlexPetrusca/java-games/blob/master/asteroids/src/screenshots/screen1.PNG
-[A2]: https://github.com/AlexPetrusca/java-games/blob/master/asteroids/src/screenshots/screen2.PNG
 
 # Breakout 
 A Breakout game implemented using Swing
@@ -55,11 +54,10 @@ A Breakout game implemented using Swing
   * Use mouse or arrow keys to play.
   * Space or mouse click to perform actions like shooting.
   
-![B1]  |  ![B2]
-:-----:|:-----:
+![B1]  |
+:-----:|
 
 [B1]: https://github.com/AlexPetrusca/java-games/blob/master/breakout/src/screenshots/screen1.PNG
-[B2]: https://github.com/AlexPetrusca/java-games/blob/master/breakout/src/screenshots/screen2.PNG
 
 # Pong 
 A Pong game implemented using Swing
@@ -96,4 +94,4 @@ The first game I ever made for a class project. A Pokemon-inspired game with geo
 ![POK1]  |
 :-------:|
 
-[POK1]: https://github.com/AlexPetrusca/java-games/blob/master/pokemon/src/screenshots/screen1.PNG
+[POK1]: https://github.com/AlexPetrusca/java-games/blob/master/pokemon/src/fiveweek/screenshots/screen1.PNG
