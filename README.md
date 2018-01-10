@@ -26,6 +26,12 @@ A Tetris game implemented using Swing
   * Use up arrow key to perform piece rotations.
   * Use down arrow key to make pieces fall faster
   
+![T1]  |  ![T2]
+:-----:|:-----:
+
+[T1]: https://github.com/AlexPetrusca/java-games/blob/master/tetris/src/screenshots/screen1.PNG
+[T2]: https://github.com/AlexPetrusca/java-games/blob/master/tetris/src/screenshots/screen2.PNG
+
 # Asteroids 
 A mostly complete Asteroids game implemented using Swing
 
@@ -34,6 +40,12 @@ A mostly complete Asteroids game implemented using Swing
   * Use right and left arrow keys to rotate the rocket ship.
   * Use up key to turn engine on and accelerate forward.
   * Use the "q" key to shoot bullets.
+  
+![A1]  |  ![A2]
+:-----:|:-----:
+
+[A1]: https://github.com/AlexPetrusca/java-games/blob/master/asteroids/src/screenshots/screen1.PNG
+[A2]: https://github.com/AlexPetrusca/java-games/blob/master/asteroids/src/screenshots/screen2.PNG
 
 # Breakout 
 A Breakout game implemented using Swing
@@ -42,6 +54,12 @@ A Breakout game implemented using Swing
 * Instructions:
   * Use mouse or arrow keys to play.
   * Space or mouse click to perform actions like shooting.
+  
+![B1]  |  ![B2]
+:-----:|:-----:
+
+[B1]: https://github.com/AlexPetrusca/java-games/blob/master/breakout/src/screenshots/screen1.PNG
+[B2]: https://github.com/AlexPetrusca/java-games/blob/master/breakout/src/screenshots/screen2.PNG
 
 # Pong 
 A Pong game implemented using Swing
@@ -51,6 +69,10 @@ A Pong game implemented using Swing
   * Use up and down arrow keys to control the right paddle.
   * Use "w" and "s" to control the left paddle.
  
+![PONG1]  |
+:--------:|
+
+[PONG1]: https://github.com/AlexPetrusca/java-games/blob/master/pong/src/screenshots/screen1.PNG
 
 # A-star PacMan 
 An incomplete Pacman game with ghosts using A-star algorithm to chase PacMan
@@ -58,6 +80,11 @@ An incomplete Pacman game with ghosts using A-star algorithm to chase PacMan
 * Main class - AStarMain.java
 * Instructions:
   * Use arrow keys to maneuver.
+  
+![PAC1]  |
+:-------:|
+
+[PAC1]: https://github.com/AlexPetrusca/java-games/blob/master/a-star/src/screenshots/screen1.PNG
 
 # Pokemon 
 The first game I ever made for a class project. A Pokemon-inspired game with geometric shapes instead of Pokemon.
@@ -65,3 +92,8 @@ The first game I ever made for a class project. A Pokemon-inspired game with geo
 * Main class - PokemonMain.java
 * Instructions:
   * Use arrow keys to maneuver.
+  
+![POK1]  |
+:-------:|
+
+[POK1]: https://github.com/AlexPetrusca/java-games/blob/master/pokemon/src/screenshots/screen1.PNG
