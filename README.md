@@ -17,21 +17,6 @@ A modernized Breakout game implemented using JavaFX
 [BFX4]: https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen4.PNG
 [BFX5]: https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen5.PNG
 
-# Tetris
-A Tetris game implemented using Swing
-
-* Main class - TetrisRun.java
-* Instructions:
-  * Use left and right arrow keys to move pieces left and right.
-  * Use up arrow key to perform piece rotations.
-  * Use down arrow key to make pieces fall faster
-  
-![T1]  |  ![T2]
-:-----:|:-----:
-
-[T1]: https://github.com/AlexPetrusca/java-games/blob/master/tetris/src/screenshots/screen1.PNG
-[T2]: https://github.com/AlexPetrusca/java-games/blob/master/tetris/src/screenshots/screen2.PNG
-
 # Asteroids 
 A mostly complete Asteroids game implemented using Swing
 
@@ -47,6 +32,21 @@ A mostly complete Asteroids game implemented using Swing
 [A1]: https://github.com/AlexPetrusca/java-games/blob/master/asteroids/src/screenshots/screen1.PNG
 [A2]: https://github.com/AlexPetrusca/java-games/blob/master/asteroids/src/screenshots/screen2.PNG
 
+# Tetris
+A Tetris game implemented using Swing
+
+* Main class - TetrisRun.java
+* Instructions:
+  * Use left and right arrow keys to move pieces left and right.
+  * Use up arrow key to perform piece rotations.
+  * Use down arrow key to make pieces fall faster
+  
+![T1]  |  ![T2]
+:-----:|:-----:
+
+[T1]: https://github.com/AlexPetrusca/java-games/blob/master/tetris/src/screenshots/screen1.PNG
+[T2]: https://github.com/AlexPetrusca/java-games/blob/master/tetris/src/screenshots/screen2.PNG
+
 # Breakout 
 A Breakout game implemented using Swing
 
@@ -61,6 +61,18 @@ A Breakout game implemented using Swing
 [B1]: https://github.com/AlexPetrusca/java-games/blob/master/breakout/src/screenshots/screen1.PNG
 [B2]: https://github.com/AlexPetrusca/java-games/blob/master/breakout/src/screenshots/screen2.PNG
 
+# A-star PacMan 
+An incomplete Pacman game with ghosts using A-star algorithm to chase PacMan
+
+* Main class - AStarMain.java
+* Instructions:
+  * Use arrow keys to maneuver.
+  
+![PAC1]  |
+:-------:|
+
+[PAC1]: https://github.com/AlexPetrusca/java-games/blob/master/a-star/src/screenshots/screen1.PNG
+
 # Pong 
 A Pong game implemented using Swing
 
@@ -73,18 +85,6 @@ A Pong game implemented using Swing
 :--------:|
 
 [PONG1]: https://github.com/AlexPetrusca/java-games/blob/master/pong/src/screenshots/screen1.PNG
-
-# A-star PacMan 
-An incomplete Pacman game with ghosts using A-star algorithm to chase PacMan
-
-* Main class - AStarMain.java
-* Instructions:
-  * Use arrow keys to maneuver.
-  
-![PAC1]  |
-:-------:|
-
-[PAC1]: https://github.com/AlexPetrusca/java-games/blob/master/a-star/src/screenshots/screen1.PNG
 
 # Pokemon 
 The first game I ever made for a class project. A Pokemon-inspired game with geometric shapes instead of Pokemon.
