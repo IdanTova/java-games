@@ -1,5 +1,5 @@
 # BreakoutFX 
-A Breakout game implemented using JavaFX 
+A modernized Breakout game implemented using JavaFX 
 
 * Main class - BreakoutRunFX.java
 * Instructions:
