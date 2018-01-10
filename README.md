@@ -8,6 +8,10 @@ A Breakout game implemented using JavaFX
   * Escape to pause game.
 
 ![Screen1](https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen1.PNG)
+![Screen2](https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen2.PNG)
+![Screen2](https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen3.PNG)
+![Screen2](https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen4.PNG)
+![Screen2](https://github.com/AlexPetrusca/java-games/blob/master/breakout-fx/src/screenshots/screen5.PNG)
 
 # Tetris
 A Tetris game implemented using Swing
